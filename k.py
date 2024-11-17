@@ -9,7 +9,7 @@ import datetime
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-BOT_TOKEN=("7354852233:AAEqqlMxvuNx1OYW9qYbzOkfAOREvapWP0M")
+BOT_TOKEN=("7357183656:AAGgw08K3nFIVRIxlJnPIFeABDK4A0igLDA")
 
 ADMIN_IDS=("6200706724")
 
