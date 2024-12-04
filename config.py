@@ -1,0 +1,12 @@
+BOT_TOKEN=("7559793418:AAEcYYlxpU3iR9wK_hV_Qwb-m4WFC0ddxsw")
+
+OWNER_USERNAME=("@itzmd808sahil_SELLER")
+
+ADMIN_IDS=["5879359815", "6200706724"]
+
+
+
+
+
+
+  
